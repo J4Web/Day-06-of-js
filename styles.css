@@ -1,0 +1,43 @@
+body{
+    background-color: #352f5b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .heading{
+    color: #352f5b;
+  }
+  .container{
+    max-width: 450px;
+  }
+  
+  input[type=text],
+  input[type=text]:focus{
+    color: #fff;
+    border: none;
+    background-color: rgba(0, 0, 0, .2);
+  }
+  
+  li.list-group-item{
+    background-color: #423a6f;
+    color: #F8F9FA;
+  }
+  
+  .delete{
+    cursor: pointer;
+  }
+  
+  label.add{
+    margin-bottom: 15px;
+  }
+  
+  .filtred{
+    display: none !important;
+  }
+
+  .nothing-to-see{
+    font-family: 'Courier New', Courier, monospace;
+    color: #352f5b;
+  }

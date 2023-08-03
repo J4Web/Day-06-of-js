@@ -41,3 +41,8 @@ body{
     font-family: 'Courier New', Courier, monospace;
     color: #352f5b;
   }
+
+  .name{
+    background: rgb(242, 242, 42);
+    color: #000000;
+  }

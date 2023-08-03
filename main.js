@@ -16,6 +16,8 @@ function filterCities(wordToMatch,cities)
         // console.log(place);
         //g -> global i-> insensitive (case)
         const regex=new RegExp(wordToMatch,'gi')
+        // console.log(place.city.replace(regex,`<span class="name">${this.value}</span>`));
+    
         //here we need to match with searched city
         return place.city.match(regex) || place.state.match(regex);
     })
@@ -24,9 +26,12 @@ function filterCities(wordToMatch,cities)
 function getMatches(e){
     const match=filterCities(this.value,cities);
    const html= match.map(eachMatch=> {
+        const regex=new RegExp(this.value,'gi');
+        const cityName=eachMatch.city.replace(regex,`<span class="name">${this.value}</span>`);
+        const stateName=eachMatch.state.replace(regex, `<span class="name">${this.value}</span>`)
         return `
         <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>City : ${eachMatch.city} | State : ${eachMatch.state}</span>
+        <span>City : ${cityName} | State : ${stateName}</span>
       </li>`
     }).join('');
     getListContainer.innerHTML=html.length==0?`<h1 class="nothing-to-see"> Nothing found from your search... </h1>`:html;
